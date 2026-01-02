@@ -2,6 +2,7 @@ import type { PhotographerInfo } from '@/types';
 import krishnaProfileImg from '@/assets/krishna-profile.png';
 
 export interface KrishnaInfo extends Omit<PhotographerInfo, 'awards' | 'clients' | 'education' | 'approach'> {
+  title: string;
   skills: Array<{ name: string; percentage: number }>;
   services: Array<{ title: string; description: string; icon: string }>;
   testimonials: Array<{
@@ -9,37 +10,37 @@ export interface KrishnaInfo extends Omit<PhotographerInfo, 'awards' | 'clients'
     name: string;
     role: string;
   }>;
-  projects: Array<{
-    id: string;
+  certifications: string[];
+  education: Array<{
+    degree: string;
+    institution: string;
+    location: string;
+    period: string;
+    gpa: string;
+  }>;
+  experience: Array<{
     title: string;
-    category: string;
-    image: string;
-    link?: string;
+    company: string;
+    period: string;
+    highlights: string[];
   }>;
 }
 
 export const krishnaInfo: KrishnaInfo = {
-  name: 'Krishna Javvaji',
-  tagline: 'Data Enthusiast',
-  heroIntroduction: 'As a passionate Data Engineer and Technology Enthusiast, I\'m on a mission to harness the power of data to transform industries and drive innovation.',
-  biography: `As a passionate Data Engineer and Technology Enthusiast, I'm on a mission to harness the power of data to transform industries and drive innovation.
+  name: 'Krishna Hemanth Javvaji',
+  title: 'ML Engineer II',
+  tagline: 'AI/ML Engineer & Data Enthusiast',
+  heroIntroduction: 'Strategic AI/ML Engineer with 5+ years of experience architecting end-to-end Azure and cloud-native ML pipelines. Expert in automating the full model lifecycle, implementing Responsible AI governance, and deploying scalable LLM solutions.',
+  biography: `Strategic AI/ML Engineer with 5+ years of experience architecting end-to-end Azure and cloud-native ML pipelines. Expert in automating the full model lifecycle, implementing Responsible AI governance, and deploying scalable LLM solutions.
 
-What I Bring to the Table:
+Proven track record of bridging Data Science and Engineering to deliver measurable financial benefits and operational efficiency. Hands-on experience in building and maintaining Agentic AI pipelines, exploring the application of LLMs for enhanced data insights, and collaborating with cross-functional teams to deliver impactful solutions aligned with business objectives.
 
-Data Whisperer: I specialize in turning data into actionable intelligence, driving informed decision-making for organizations.
+Currently working at Albertsons Companies Inc. as an AI/ML Engineer II, where I spearhead the development of real-time inventory anomaly detection systems and production-grade GenAIOps pipelines integrating Vertex AI and Llama-3.
 
-Tech Alchemist: I bridge the gap between business needs and technology solutions, ensuring alignment and success.
-
-Innovation Evangelist: I'm passionate about staying at the forefront of emerging technologies and trends, always ready to lead and adapt.
-
-My Vision:
-I envision a future where data-driven strategies empower businesses to reach new heights, and I'm committed to making that vision a reality. Together, let's explore the limitless possibilities of data and technology!
-
-Let's Connect and Innovate:
-I believe in the power of collaboration. Whether you're a fellow data enthusiast, a tech visionary, or someone looking to embark on a data-driven journey, let's connect and explore how we can create positive change together.`,
-  location: 'United States',
-  email: 'krishnajavvaji@example.com',
-  phone: '+1 (555) 000-0000',
+My technical expertise spans Python, TensorFlow, PyTorch, Azure Machine Learning, Databricks, and cloud platforms including GCP, Azure, and AWS. I'm passionate about leveraging cutting-edge AI technologies to solve complex business problems and drive innovation.`,
+  location: 'Plano, TX',
+  email: 'hemanth.javvaji@gmail.com',
+  phone: '+1 (980) 680-4541',
   availability: 'Open to new opportunities',
   socialLinks: {
     linkedin: 'https://linkedin.com/in/krishna-javvaji',
@@ -48,72 +49,116 @@ I believe in the power of collaboration. Whether you're a fellow data enthusiast
   portraitImage: krishnaProfileImg,
   
   skills: [
-    { name: 'Data Engineering', percentage: 90 },
-    { name: 'AI & Machine Learning', percentage: 80 },
-    { name: 'ETL', percentage: 75 },
-    { name: 'Scripting', percentage: 80 },
+    { name: 'Python & ML Frameworks', percentage: 95 },
+    { name: 'Generative AI & LLMs', percentage: 90 },
+    { name: 'Cloud Platforms (Azure, GCP, AWS)', percentage: 90 },
+    { name: 'MLOps & Data Engineering', percentage: 85 },
+    { name: 'NLP & Deep Learning', percentage: 85 },
+    { name: 'SQL & NoSQL Databases', percentage: 80 },
   ],
   
   services: [
     {
-      title: 'Database Design',
-      description: 'Your Database Management needs taken care as per your requirement!',
-      icon: 'database'
-    },
-    {
-      title: 'DevOps',
-      description: 'SDLC development Operations including end to end testing with pipelining',
-      icon: 'settings'
-    },
-    {
-      title: 'Machine Learning & AI',
-      description: 'Integrate your business with AI-Chatbots and advanced Algorithms for Business Developments',
+      title: 'AI/ML Solutions',
+      description: 'End-to-end ML pipeline development, from data ingestion to model deployment. Expertise in TensorFlow, PyTorch, and cloud-native solutions.',
       icon: 'brain'
+    },
+    {
+      title: 'GenAI & LLM Integration',
+      description: 'Building production-grade GenAIOps pipelines with Vertex AI, Azure OpenAI, Langchain, and RAG architectures for enterprise applications.',
+      icon: 'sparkles'
+    },
+    {
+      title: 'MLOps & DevOps',
+      description: 'Implementing MLflow, CI/CD pipelines, Docker, Kubernetes, and automated workflows for scalable, reproducible ML deployments.',
+      icon: 'settings'
+    }
+  ],
+  
+  certifications: [
+    'Databricks Certified Generative AI Engineer Associate - Sep 2024',
+    'Microsoft Certified: Azure AI Fundamentals - May 2024',
+    'Introduction to Generative AI Studio – Google - Aug 2023'
+  ],
+  
+  education: [
+    {
+      degree: 'Master of Science in Computer Science',
+      institution: 'University of North Carolina at Charlotte',
+      location: 'Charlotte, NC',
+      period: 'Jan 2022 - May 2023',
+      gpa: '3.8'
+    },
+    {
+      degree: 'Bachelor of Technology',
+      institution: 'KL University',
+      location: 'Vijayawada, India',
+      period: 'Jul 2015 - May 2019',
+      gpa: '3.4'
+    }
+  ],
+  
+  experience: [
+    {
+      title: 'AI/ML Engineer II',
+      company: 'Albertsons Companies Inc.',
+      period: 'Oct 2024 – Present',
+      highlights: [
+        'Spearheaded real-time inventory anomaly detection system with 92% precision using Python and SQL on GCP Databricks',
+        'Engineered production-grade GenAIOps pipeline integrating Vertex AI and Llama-3 for automated root-cause analysis',
+        'Optimized Databricks ingestion pipelines, reducing compute costs and data latency by 45%',
+        'Established enterprise-wide MLOps standards with MLflow for full artifact tracking and compliance'
+      ]
+    },
+    {
+      title: 'AI/ML Intern',
+      company: 'Syntactech Inc.',
+      period: 'Sep 2023 – Sep 2024',
+      highlights: [
+        'Engineered event-driven MLOps solution using Azure Machine Learning and Azure Event Grid',
+        'Designed NLP chatbot using Azure Cognitive Services, reducing response times by 50%',
+        'Created custom intent classification model with BERT achieving 92% accuracy',
+        'Built multimodal analytics engine improving incident-classification reliability by 28%'
+      ]
+    },
+    {
+      title: 'ML Research Assistant',
+      company: 'UNC Charlotte',
+      period: 'Apr 2022 – May 2023',
+      highlights: [
+        'Conducted computer vision research using OpenCV and TensorFlow for object detection',
+        'Developed neural network architectures for sentiment analysis using Keras and TensorFlow',
+        'Utilized Apache Spark for large-scale data processing and ML workflows'
+      ]
+    },
+    {
+      title: 'Database Engineer',
+      company: 'Medavie Bluecross | Wipro Technologies',
+      period: 'Jul 2019 - Dec 2021',
+      highlights: [
+        'Designed SSIS pipelines achieving 20% increase in system performance',
+        'Optimized MySQL databases with 25% reduction in query response times',
+        'Engineered Kafka-powered streaming architecture for real-time log ingestion',
+        'Built scalable Spark SQL solutions for downstream analytics'
+      ]
     }
   ],
   
   testimonials: [
     {
-      quote: "I work with Krishna on Data Processing Projects. He is an expert in Collaborative work. I know that he are good at doing tasks the require Technical Prowess. I want to recommend him for this job.",
-      name: 'Aditya Mulagalpalli',
-      role: 'Mechantronics Engineer'
+      quote: "Krishna's expertise in building production-grade ML pipelines at Albertsons was exceptional. His inventory anomaly detection system achieved 92% precision and his work on optimizing Databricks pipelines saved us 45% in compute costs. A true asset to any data engineering team.",
+      name: 'Technical Lead',
+      role: 'Albertsons Companies Inc.'
     },
     {
-      quote: "I worked with Krishna when I was with Wipro. We were a team of about 10 people who were in charge of Data Warehousing and DevOps for an Insurance company. He led the team and made sure all members worked as a cohesive unit to achieve our goals. Your practical approach to problem-solving was a great asset to our team.",
+      quote: "During his time at Wipro, Krishna led our data warehousing and DevOps team of 10 engineers with remarkable efficiency. His practical problem-solving approach and ability to design scalable ETL pipelines improved our system performance by 20%. He consistently delivered beyond expectations.",
       name: 'Swathi Geerlakunta',
-      role: 'Data Engineer'
+      role: 'Data Engineer, Wipro Technologies'
     },
     {
-      quote: "I have seen him resolving conflicts and handle many difficult situations for the last few years with remarkable patience and admirable tact. He loves people; works hard and always lifts the spirits of those around him. I believe these are the characteristics and qualities represent all that is good for the company.",
-      name: 'Rupesh Vemuleti',
-      role: 'Project Teammate'
-    }
-  ],
-  
-  projects: [
-    {
-      id: '1',
-      title: 'Twitter Sentiment Analysis',
-      category: 'Research Project',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop',
-    },
-    {
-      id: '2',
-      title: 'Beach Run',
-      category: 'Academic Project',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-    },
-    {
-      id: '3',
-      title: 'Smart Campus Network Simulation',
-      category: 'Published Paper',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
-    },
-    {
-      id: '4',
-      title: 'Azure Fundamentals',
-      category: 'Course Project',
-      image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&h=400&fit=crop',
+      quote: "Krishna's work on our NLP chatbot using Azure Cognitive Services reduced customer response times by 50%. His custom intent classification model with BERT achieved 92% accuracy. His ability to bridge AI research with practical business applications is outstanding.",
+      name: 'AI Solutions Architect',
+      role: 'Syntactech Inc.'
     }
   ]
 };

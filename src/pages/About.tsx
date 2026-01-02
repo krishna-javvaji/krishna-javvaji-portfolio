@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Github, Download } from 'lucide-react';
+import { Linkedin, Github, Download, Award, GraduationCap, Briefcase } from 'lucide-react';
 import { krishnaInfo } from '@/data/krishna';
 import { Separator } from '@/components/ui/separator';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -15,7 +15,7 @@ export default function About() {
     <>
       <SEOHead
         title="About Krishna Javvaji"
-        description={`Learn about ${krishnaInfo.name}, ${krishnaInfo.tagline}. ${krishnaInfo.heroIntroduction}`}
+        description={`Learn about ${krishnaInfo.name}, ${krishnaInfo.title}. ${krishnaInfo.heroIntroduction}`}
         image={krishnaProfileImg}
       />
       
@@ -32,7 +32,7 @@ export default function About() {
                 About Me
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
-                Data Engineer & Technology Enthusiast
+                {krishnaInfo.title} | {krishnaInfo.tagline}
               </p>
             </motion.div>
           </div>
@@ -107,22 +107,17 @@ export default function About() {
                     {krishnaInfo.name}
                   </h2>
                   <p className="text-xl text-primary font-light tracking-wide">
-                    {krishnaInfo.tagline}
+                    {krishnaInfo.title}
                   </p>
                 </div>
 
                 <Separator />
 
-                {/* Biography */}
+                {/* Summary */}
                 <div className="space-y-4">
-                  {krishnaInfo.biography.split('\n\n').map((paragraph, index) => (
-                    <p
-                      key={index}
-                      className="text-base md:text-lg font-light leading-relaxed text-muted-foreground"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
+                  <p className="text-base md:text-lg font-light leading-relaxed text-muted-foreground">
+                    {krishnaInfo.heroIntroduction}
+                  </p>
                 </div>
 
                 {/* Contact Info */}
@@ -137,6 +132,15 @@ export default function About() {
                     </a>
                   </div>
                   <div className="text-sm font-light tracking-wide">
+                    <span className="text-muted-foreground">Phone: </span>
+                    <a
+                      href={`tel:${krishnaInfo.phone}`}
+                      className="text-foreground hover:text-primary transition-colors"
+                    >
+                      {krishnaInfo.phone}
+                    </a>
+                  </div>
+                  <div className="text-sm font-light tracking-wide">
                     <span className="text-muted-foreground">Location: </span>
                     <span className="text-foreground">{krishnaInfo.location}</span>
                   </div>
@@ -146,6 +150,33 @@ export default function About() {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section className="py-16 md:py-24 px-6 lg:px-8 border-t border-border">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 mb-8">
+                <Award className="size-6 text-primary" />
+                <h2 className="text-3xl md:text-4xl font-heading font-medium">
+                  Certifications
+                </h2>
+              </div>
+            </ScrollReveal>
+            
+            <div className="grid gap-4">
+              {krishnaInfo.certifications.map((cert, index) => (
+                <ScrollReveal key={cert} delay={index * 0.1}>
+                  <motion.div
+                    className="p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-colors"
+                    whileHover={{ x: 5 }}
+                  >
+                    <p className="font-light text-foreground">{cert}</p>
+                  </motion.div>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>
@@ -181,6 +212,80 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 + index * 0.1, ease: "easeOut" }}
                       />
+                    </div>
+                  </motion.div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section className="py-16 md:py-24 px-6 lg:px-8 border-t border-border bg-card">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 mb-12">
+                <Briefcase className="size-6 text-primary" />
+                <h2 className="text-3xl md:text-4xl font-heading font-medium">
+                  Work Experience
+                </h2>
+              </div>
+            </ScrollReveal>
+            
+            <div className="space-y-8">
+              {krishnaInfo.experience.map((exp, index) => (
+                <ScrollReveal key={exp.company} delay={index * 0.1}>
+                  <motion.div
+                    className="p-6 rounded-lg bg-background border border-border"
+                    whileHover={{ y: -3 }}
+                  >
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-medium text-foreground">{exp.title}</h3>
+                        <p className="text-primary font-light">{exp.company}</p>
+                      </div>
+                      <p className="text-sm text-muted-foreground font-light mt-1 md:mt-0">{exp.period}</p>
+                    </div>
+                    <ul className="space-y-2">
+                      {exp.highlights.map((highlight, i) => (
+                        <li key={i} className="text-sm font-light text-muted-foreground flex items-start gap-2">
+                          <span className="text-primary mt-1">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section className="py-16 md:py-24 px-6 lg:px-8 border-t border-border">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 mb-12">
+                <GraduationCap className="size-6 text-primary" />
+                <h2 className="text-3xl md:text-4xl font-heading font-medium">
+                  Education
+                </h2>
+              </div>
+            </ScrollReveal>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {krishnaInfo.education.map((edu, index) => (
+                <ScrollReveal key={edu.institution} delay={index * 0.1}>
+                  <motion.div
+                    className="p-6 rounded-lg bg-card border border-border"
+                    whileHover={{ y: -3 }}
+                  >
+                    <h3 className="text-lg font-medium text-foreground mb-1">{edu.degree}</h3>
+                    <p className="text-primary font-light mb-2">{edu.institution}</p>
+                    <p className="text-sm text-muted-foreground font-light">{edu.location}</p>
+                    <div className="flex justify-between mt-3 pt-3 border-t border-border">
+                      <span className="text-sm text-muted-foreground">{edu.period}</span>
+                      <span className="text-sm text-primary">GPA: {edu.gpa}</span>
                     </div>
                   </motion.div>
                 </ScrollReveal>
