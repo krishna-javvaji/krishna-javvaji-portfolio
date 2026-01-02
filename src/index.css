@@ -39,9 +39,9 @@
   --sidebar-border: hsl(30 10% 88%);
   --sidebar-ring: hsl(25 70% 45%);
 
-  /* Custom portfolio tokens */
-  --hero-gradient-start: hsl(15 25% 20%);
-  --hero-gradient-end: hsl(20 30% 12%);
+  /* Custom portfolio tokens - Hero stays dark in both themes for contrast */
+  --hero-gradient-start: hsl(15 25% 18%);
+  --hero-gradient-end: hsl(20 30% 10%);
   --hero-foreground: hsl(0 0% 98%);
   --hero-foreground-muted: hsl(30 15% 85%);
   --hero-primary: hsl(25 80% 60%);
