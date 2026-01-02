@@ -28,7 +28,7 @@ export interface KrishnaInfo extends Omit<PhotographerInfo, 'awards' | 'clients'
 
 export const krishnaInfo: KrishnaInfo = {
   name: 'Krishna Hemanth Javvaji',
-  title: 'ML Engineer II',
+  title: 'AI ML Engineer',
   tagline: 'Data Enthusiast',
   heroIntroduction: 'Strategic AI/ML Engineer with 4+ years of experience architecting end-to-end Azure and cloud-native ML pipelines. Expert in automating the full model lifecycle, implementing Responsible AI governance, and deploying scalable LLM solutions.',
   biography: `Strategic AI/ML Engineer with 5+ years of experience architecting end-to-end Azure and cloud-native ML pipelines. Expert in automating the full model lifecycle, implementing Responsible AI governance, and deploying scalable LLM solutions.
