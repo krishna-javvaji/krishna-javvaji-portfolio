@@ -101,9 +101,8 @@ export default function Home() {
                 >
                   <Button
                     asChild
-                    variant="outline"
                     size="lg"
-                    className="border-hero-foreground-muted/50 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground"
+                    className="bg-transparent border border-hero-foreground/50 text-hero-foreground hover:bg-hero-foreground/10"
                   >
                     <Link to="/portfolio">View Works</Link>
                   </Button>
