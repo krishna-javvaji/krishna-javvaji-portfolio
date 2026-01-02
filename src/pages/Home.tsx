@@ -5,7 +5,7 @@ import { ProjectCard } from '@/components/portfolio/ProjectCard';
 import { ScrollIndicator } from '@/components/ui/ScrollIndicator';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { ArrowRight, Database, Settings, Brain, Download, Linkedin, Github } from 'lucide-react';
+import { ArrowRight, Database, Settings, Brain, Sparkles, Download, Linkedin, Github, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import krishnaProfileImg from '@/assets/krishna-profile.png';
@@ -22,6 +22,7 @@ export default function Home() {
       case 'database': return <Database className="size-8 text-primary" />;
       case 'settings': return <Settings className="size-8 text-primary" />;
       case 'brain': return <Brain className="size-8 text-primary" />;
+      case 'sparkles': return <Sparkles className="size-8 text-primary" />;
       default: return <Database className="size-8 text-primary" />;
     }
   };
@@ -79,6 +80,14 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
+                  >
+                    {krishnaInfo.title}
+                  </motion.p>
+                  <motion.p
+                    className="text-lg font-light text-foreground/80 max-w-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.45 }}
                   >
                     {krishnaInfo.tagline}
                   </motion.p>
