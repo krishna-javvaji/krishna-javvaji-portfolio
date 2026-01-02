@@ -60,7 +60,7 @@ export default function Home() {
               >
                 <div className="space-y-4">
                   <motion.p
-                    className="text-lg font-light tracking-wide text-foreground/80"
+                    className="text-lg font-light tracking-wide text-hero-foreground-muted"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -68,7 +68,7 @@ export default function Home() {
                     Hey! I am
                   </motion.p>
                   <motion.h1
-                    className="text-5xl md:text-6xl lg:text-7xl font-heading font-medium tracking-wide text-foreground"
+                    className="text-5xl md:text-6xl lg:text-7xl font-heading font-medium tracking-wide text-hero-foreground"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
@@ -76,7 +76,7 @@ export default function Home() {
                     {krishnaInfo.name}
                   </motion.h1>
                   <motion.p
-                    className="text-2xl md:text-3xl font-light text-primary"
+                    className="text-2xl md:text-3xl font-light text-hero-primary"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
@@ -84,7 +84,7 @@ export default function Home() {
                     {krishnaInfo.title}
                   </motion.p>
                   <motion.p
-                    className="text-lg font-light text-foreground/80 max-w-lg"
+                    className="text-lg font-light text-hero-foreground-muted max-w-lg"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.45 }}
@@ -103,7 +103,7 @@ export default function Home() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground"
+                    className="border-hero-foreground-muted/50 text-hero-foreground hover:bg-hero-foreground/10 hover:text-hero-foreground"
                   >
                     <Link to="/portfolio">View Works</Link>
                   </Button>

@@ -42,6 +42,9 @@
   /* Custom portfolio tokens */
   --hero-gradient-start: hsl(15 25% 20%);
   --hero-gradient-end: hsl(20 30% 12%);
+  --hero-foreground: hsl(30 15% 92%);
+  --hero-foreground-muted: hsl(30 10% 75%);
+  --hero-primary: hsl(25 70% 55%);
   --copper: hsl(25 70% 50%);
   --copper-light: hsl(25 60% 65%);
   --copper-dark: hsl(25 75% 40%);
@@ -84,6 +87,9 @@
   /* Custom portfolio tokens - Dark */
   --hero-gradient-start: hsl(15 25% 18%);
   --hero-gradient-end: hsl(20 30% 10%);
+  --hero-foreground: hsl(30 15% 92%);
+  --hero-foreground-muted: hsl(30 10% 75%);
+  --hero-primary: hsl(25 70% 55%);
   --copper: hsl(25 70% 55%);
   --copper-light: hsl(25 60% 70%);
   --copper-dark: hsl(25 75% 45%);
@@ -126,6 +132,9 @@
   --color-copper-dark: var(--copper-dark);
   --color-hero-gradient-start: var(--hero-gradient-start);
   --color-hero-gradient-end: var(--hero-gradient-end);
+  --color-hero-foreground: var(--hero-foreground);
+  --color-hero-foreground-muted: var(--hero-foreground-muted);
+  --color-hero-primary: var(--hero-primary);
   --color-skill-bar-bg: var(--skill-bar-bg);
   --color-skill-bar-fill: var(--skill-bar-fill);
 
