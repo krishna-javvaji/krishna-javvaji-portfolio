@@ -74,6 +74,7 @@ My technical expertise spans Python, TensorFlow, PyTorch, Azure Machine Learning
   ],
   
   certifications: [
+    'Microsoft Certified: Azure AI Engineer Associate - Dec 2025',
     'Databricks Certified Generative AI Engineer Associate - Sep 2024',
     'Microsoft Certified: Azure AI Fundamentals - May 2024',
     'Introduction to Generative AI Studio – Google - Aug 2023'
