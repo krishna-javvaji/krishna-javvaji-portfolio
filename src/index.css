@@ -39,12 +39,12 @@
   --sidebar-border: hsl(30 10% 88%);
   --sidebar-ring: hsl(25 70% 45%);
 
-  /* Custom portfolio tokens - Hero stays dark in both themes for contrast */
-  --hero-gradient-start: hsl(15 25% 18%);
-  --hero-gradient-end: hsl(20 30% 10%);
-  --hero-foreground: hsl(0 0% 98%);
-  --hero-foreground-muted: hsl(30 15% 85%);
-  --hero-primary: hsl(25 80% 60%);
+  /* Custom portfolio tokens - Light theme hero */
+  --hero-gradient-start: hsl(30 20% 95%);
+  --hero-gradient-end: hsl(25 15% 88%);
+  --hero-foreground: hsl(15 30% 20%);
+  --hero-foreground-muted: hsl(15 20% 35%);
+  --hero-primary: hsl(25 75% 40%);
   --copper: hsl(25 70% 50%);
   --copper-light: hsl(25 60% 65%);
   --copper-dark: hsl(25 75% 40%);
