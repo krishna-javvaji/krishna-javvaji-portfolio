@@ -31,9 +31,7 @@ export const krishnaInfo: KrishnaInfo = {
   title: 'AI ML Engineer',
   tagline: 'Data Enthusiast',
   heroIntroduction: 'Strategic AI/ML Engineer with 4+ years of experience architecting end-to-end Azure and cloud-native ML pipelines. Expert in automating the full model lifecycle, implementing Responsible AI governance, and deploying scalable LLM solutions.',
-  biography: `Strategic AI/ML Engineer with 4+ years of experience architecting end-to-end Azure and cloud-native ML pipelines. Expert in automating the full model lifecycle, implementing Responsible AI governance, and deploying scalable LLM solutions.
-
-Proven track record of bridging Data Science and Engineering to deliver measurable financial benefits and operational efficiency. Hands-on experience in building and maintaining Agentic AI pipelines, exploring the application of LLMs for enhanced data insights, and collaborating with cross-functional teams to deliver impactful solutions aligned with business objectives.
+  biography: `Proven track record of bridging Data Science and Engineering to deliver measurable financial benefits and operational efficiency. Hands-on experience in building and maintaining Agentic AI pipelines, exploring the application of LLMs for enhanced data insights, and collaborating with cross-functional teams to deliver impactful solutions aligned with business objectives.
 
 Currently working at Albertsons Companies Inc. as an AI/ML Engineer II, where I spearhead the development of real-time inventory anomaly detection systems and production-grade GenAIOps pipelines integrating Vertex AI and Llama-3.
 
