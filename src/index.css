@@ -42,9 +42,9 @@
   /* Custom portfolio tokens */
   --hero-gradient-start: hsl(15 25% 20%);
   --hero-gradient-end: hsl(20 30% 12%);
-  --hero-foreground: hsl(30 15% 92%);
-  --hero-foreground-muted: hsl(30 10% 75%);
-  --hero-primary: hsl(25 70% 55%);
+  --hero-foreground: hsl(0 0% 98%);
+  --hero-foreground-muted: hsl(30 15% 85%);
+  --hero-primary: hsl(25 80% 60%);
   --copper: hsl(25 70% 50%);
   --copper-light: hsl(25 60% 65%);
   --copper-dark: hsl(25 75% 40%);
@@ -87,9 +87,9 @@
   /* Custom portfolio tokens - Dark */
   --hero-gradient-start: hsl(15 25% 18%);
   --hero-gradient-end: hsl(20 30% 10%);
-  --hero-foreground: hsl(30 15% 92%);
-  --hero-foreground-muted: hsl(30 10% 75%);
-  --hero-primary: hsl(25 70% 55%);
+  --hero-foreground: hsl(0 0% 98%);
+  --hero-foreground-muted: hsl(30 15% 85%);
+  --hero-primary: hsl(25 80% 60%);
   --copper: hsl(25 70% 55%);
   --copper-light: hsl(25 60% 70%);
   --copper-dark: hsl(25 75% 45%);
