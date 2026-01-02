@@ -109,7 +109,7 @@ My technical expertise spans Python, TensorFlow, PyTorch, Azure Machine Learning
       ]
     },
     {
-      title: 'AI/ML Intern',
+      title: 'AI/ML Engineer',
       company: 'Syntactech Inc.',
       period: 'Sep 2023 – Sep 2024',
       highlights: [
