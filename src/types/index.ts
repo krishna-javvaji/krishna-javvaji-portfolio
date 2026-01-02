@@ -1,9 +1,8 @@
 /**
- * Core TypeScript interfaces for Frame Portfolio
- * Based on SPECIFICATION.md data model requirements
+ * Core TypeScript interfaces for Krishna Javvaji Portfolio
  */
 
-export type ProjectCategory = 'portraits' | 'landscapes' | 'editorial' | 'architecture' | 'documentary';
+export type ProjectCategory = 'research' | 'academic' | 'published' | 'course' | 'professional';
 
 export type AspectRatio = 'portrait' | 'landscape' | 'square';
 
@@ -24,9 +23,27 @@ export interface Project {
   images: ProjectImage[];
   description: string;
   client?: string;
-  camera?: string;
+  technologies?: string;
   location?: string;
   slug: string;
+  link?: string;
+}
+
+export interface Skill {
+  name: string;
+  percentage: number;
+}
+
+export interface Service {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
 }
 
 export interface PhotographerInfo {
@@ -34,10 +51,10 @@ export interface PhotographerInfo {
   tagline: string;
   heroIntroduction: string;
   biography: string;
-  approach: string;
-  awards: string[];
-  clients: string[];
-  education: string;
+  approach?: string;
+  awards?: string[];
+  clients?: string[];
+  education?: string;
   location: string;
   email: string;
   phone: string;
@@ -46,14 +63,19 @@ export interface PhotographerInfo {
     instagram?: string;
     linkedin?: string;
     behance?: string;
+    github?: string;
+    twitter?: string;
   };
   portraitImage: string;
+  skills?: Skill[];
+  services?: Service[];
+  testimonials?: Testimonial[];
 }
 
 export interface ContactSubmission {
   name: string;
   email: string;
-  projectType: 'editorial' | 'commercial' | 'personal';
+  projectType: 'data-engineering' | 'ml-ai' | 'devops' | 'consulting';
   message: string;
   timestamp: Date;
 }

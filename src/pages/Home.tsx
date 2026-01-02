@@ -1,138 +1,268 @@
 import { motion } from 'framer-motion';
-import { photographerInfo } from '@/data/photographer';
+import { krishnaInfo } from '@/data/krishna';
 import { getFeaturedProjects } from '@/data/projects';
 import { ProjectCard } from '@/components/portfolio/ProjectCard';
 import { ScrollIndicator } from '@/components/ui/ScrollIndicator';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SEOHead } from '@/components/seo/SEOHead';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Database, Settings, Brain, Download, Linkedin, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import krishnaProfileImg from '@/assets/krishna-profile.png';
 
 /**
- * Homepage with immersive hero section and featured projects grid
- * Showcases photographer's best work with minimal, elegant design
+ * Krishna Javvaji Portfolio Homepage
+ * Features hero, about, skills, services, projects, and testimonials
  */
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
 
+  const getServiceIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'database': return <Database className="size-8 text-primary" />;
+      case 'settings': return <Settings className="size-8 text-primary" />;
+      case 'brain': return <Brain className="size-8 text-primary" />;
+      default: return <Database className="size-8 text-primary" />;
+    }
+  };
+
   return (
     <>
-      <SEOHead />
+      <SEOHead 
+        title="Krishna Javvaji - Data Engineer"
+        description="Krishna Javvaji - Data Engineer specializing in Data Engineering, Machine Learning, AI, ETL, and DevOps."
+      />
       
       <div className="min-h-screen">
-        {/* Hero Section - Full viewport with featured image */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="https://images.pexels.com/videos/2675516/free-video-2675516.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200"
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.currentTarget;
-              target.style.opacity = '0';
-            }}
-          >
-            <source src="https://videos.pexels.com/video-files/2675516/2675516-sd_960_540_24fps.mp4" type="video/mp4" />
-          </video>
-          {/* Video from Pexels */}
-          {/* Gradient Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
-        </div>
+        {/* Hero Section */}
+        <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-hero-gradient-start to-hero-gradient-end">
+          {/* Geometric Pattern Background */}
+          <div className="absolute inset-0 opacity-10">
+            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="triangles" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                  <polygon points="50,0 100,100 0,100" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#triangles)" className="text-copper" />
+            </svg>
+          </div>
 
-        {/* Hero Content */}
-        <div className="relative h-full flex flex-col items-center justify-center px-6">
-          <motion.div
-            className="text-center space-y-6 max-w-4xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <motion.h1
-              className="text-6xl md:text-8xl lg:text-9xl font-extralight tracking-widest text-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              {photographerInfo.name.toUpperCase()}
-            </motion.h1>
-            
-            <motion.p
-              className="text-xl md:text-2xl font-light tracking-wide text-white/90"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-            >
-              {photographerInfo.tagline}
-            </motion.p>
+          <div className="relative max-w-7xl mx-auto px-6 lg:px-8 min-h-screen flex items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-24">
+              {/* Left Content */}
+              <motion.div
+                className="space-y-8"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="space-y-4">
+                  <motion.p
+                    className="text-lg font-light tracking-wide text-foreground/80"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
+                    Hey! I am
+                  </motion.p>
+                  <motion.h1
+                    className="text-5xl md:text-6xl lg:text-7xl font-heading font-medium tracking-wide text-foreground"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                  >
+                    {krishnaInfo.name}
+                  </motion.h1>
+                  <motion.p
+                    className="text-2xl md:text-3xl font-light text-primary"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                  >
+                    {krishnaInfo.tagline}
+                  </motion.p>
+                </div>
 
-            <motion.p
-              className="text-base md:text-lg font-light leading-relaxed text-white/80 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-            >
-              {photographerInfo.heroIntroduction}
-            </motion.p>
-          </motion.div>
+                <motion.div
+                  className="flex flex-wrap gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border-primary/50 text-foreground hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <Link to="/portfolio">View Works</Link>
+                  </Button>
+                </motion.div>
+              </motion.div>
+
+              {/* Right - Profile Image */}
+              <motion.div
+                className="relative flex justify-center lg:justify-end"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <div className="relative">
+                  <img
+                    src={krishnaProfileImg}
+                    alt="Krishna Javvaji"
+                    className="w-full max-w-md lg:max-w-lg object-contain"
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </div>
 
           {/* Scroll Indicator */}
           <motion.div
-            className="absolute bottom-12"
+            className="absolute bottom-12 left-1/2 -translate-x-1/2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
             <ScrollIndicator />
           </motion.div>
-        </div>
-      </section>
+        </section>
 
-        {/* Introduction Section */}
+        {/* About Section */}
         <section className="py-24 md:py-32 px-6 lg:px-8 bg-background">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="max-w-6xl mx-auto">
             <ScrollReveal>
-              <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-              About My Work
-            </h2>
-            <div className="space-y-4 text-lg font-light leading-relaxed text-muted-foreground">
-              <p>
-                {photographerInfo.biography.split('\n\n')[0]}
-              </p>
-            </div>
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 text-base font-light tracking-wide text-foreground hover:text-muted-foreground transition-colors group"
-                >
-                  <span>Learn More About Me</span>
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                {/* About Text */}
+                <div className="space-y-6">
+                  <h2 className="text-3xl md:text-4xl font-heading font-medium tracking-wide">
+                    About Me
+                  </h2>
+                  <p className="text-lg font-light leading-relaxed text-muted-foreground">
+                    {krishnaInfo.heroIntroduction}
+                  </p>
+                  <p className="text-base font-light leading-relaxed text-muted-foreground">
+                    {krishnaInfo.biography.split('\n\n').slice(0, 2).join(' ')}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <Button
+                      variant="outline"
+                      size="default"
+                      className="gap-2"
+                    >
+                      <Download className="size-4" />
+                      Download CV
+                    </Button>
+                    {krishnaInfo.socialLinks.linkedin && (
+                      <a
+                        href={krishnaInfo.socialLinks.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 border border-border rounded-md hover:bg-accent transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <Linkedin className="size-5" />
+                      </a>
+                    )}
+                    {krishnaInfo.socialLinks.github && (
+                      <a
+                        href={krishnaInfo.socialLinks.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 border border-border rounded-md hover:bg-accent transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <Github className="size-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Skills */}
+                <div className="space-y-6">
+                  <h3 className="text-xl font-heading font-medium">My Skills</h3>
+                  <div className="space-y-5">
+                    {krishnaInfo.skills.map((skill, index) => (
+                      <motion.div
+                        key={skill.name}
+                        className="space-y-2"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                      >
+                        <div className="flex justify-between text-sm font-light">
+                          <span>{skill.name}</span>
+                          <span className="text-primary">{skill.percentage}%</span>
+                        </div>
+                        <div className="h-2 bg-skill-bar-bg rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-primary rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.percentage}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+                          />
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* Featured Projects Section */}
+        {/* Services Section */}
+        <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border">
+          <div className="max-w-6xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-16 space-y-4">
+                <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-wide">
+                  My Services
+                </h2>
+                <p className="text-lg text-muted-foreground font-light">
+                  What I can do for you
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {krishnaInfo.services.map((service, index) => (
+                <ScrollReveal key={service.title} delay={index * 0.1}>
+                  <motion.div
+                    className="p-8 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 text-center space-y-4"
+                    whileHover={{ y: -5 }}
+                  >
+                    <div className="flex justify-center">
+                      {getServiceIcon(service.icon)}
+                    </div>
+                    <h3 className="text-xl font-heading font-medium">{service.title}</h3>
+                    <p className="text-muted-foreground font-light text-sm">{service.description}</p>
+                  </motion.div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
         <section className="py-24 md:py-32 border-t border-border">
-          {/* Section Header */}
           <ScrollReveal>
             <div className="text-center mb-16 space-y-4 px-6">
-              <h2 className="text-4xl md:text-5xl font-light tracking-wide">
-                Featured Projects
+              <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-wide">
+                My Works
               </h2>
               <p className="text-lg text-muted-foreground font-light tracking-wide">
-                A selection of recent work
+                A selection of recent projects
               </p>
             </div>
           </ScrollReveal>
 
-          {/* Projects Grid - Edge to edge with minimal gaps */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-4">
             {featuredProjects.map((project, index) => (
               <ProjectCard
                 key={project.id}
@@ -144,18 +274,52 @@ export default function Home() {
             ))}
           </div>
 
-          {/* View All Link */}
           <ScrollReveal delay={0.4}>
             <div className="flex justify-center mt-16 px-6">
               <Link
                 to="/portfolio"
-                className="group inline-flex items-center gap-2 text-lg font-light tracking-wide text-foreground hover:text-muted-foreground transition-colors"
+                className="group inline-flex items-center gap-2 text-lg font-light tracking-wide text-foreground hover:text-primary transition-colors"
               >
-                <span>View All Projects</span>
+                <span>More Works</span>
                 <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </ScrollReveal>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border bg-card">
+          <div className="max-w-6xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center mb-16 space-y-4">
+                <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-wide">
+                  Testimonials
+                </h2>
+                <p className="text-lg text-muted-foreground font-light">
+                  What people say about me
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {krishnaInfo.testimonials.map((testimonial, index) => (
+                <ScrollReveal key={testimonial.name} delay={index * 0.1}>
+                  <motion.div
+                    className="p-6 rounded-lg bg-background border border-border space-y-4"
+                    whileHover={{ y: -3 }}
+                  >
+                    <p className="text-muted-foreground font-light text-sm italic leading-relaxed">
+                      "{testimonial.quote}"
+                    </p>
+                    <div className="pt-4 border-t border-border">
+                      <h4 className="font-medium text-foreground">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </motion.div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
         </section>
       </div>
     </>
