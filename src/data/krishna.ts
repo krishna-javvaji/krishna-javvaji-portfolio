@@ -152,7 +152,7 @@ My technical expertise spans Python, TensorFlow, PyTorch, Azure Machine Learning
     },
     {
       quote: "During his time at Wipro, Krishna led our data warehousing and DevOps team of 10 engineers with remarkable efficiency. His practical problem-solving approach and ability to design scalable ETL pipelines improved our system performance by 20%. He consistently delivered beyond expectations.",
-      name: 'Swathi Geerlakunta',
+      name: 'Team Lead',
       role: 'Data Engineer, Wipro Technologies'
     },
     {
