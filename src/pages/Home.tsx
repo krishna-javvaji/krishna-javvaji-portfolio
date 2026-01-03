@@ -230,7 +230,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="text-center mb-16 space-y-4">
                 <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-wide">
-                  My Services
+                  What I Do
                 </h2>
                 <p className="text-lg text-muted-foreground font-light">
                   What I can do for you
